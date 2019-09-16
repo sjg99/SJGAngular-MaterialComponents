@@ -1,0 +1,50 @@
+<div class="MainContainer">
+  <div class="AutoComplete Component">
+    <mat-form-field>
+      <input type="text" matInput [matAutocomplete]="auto" placeholder="AutoComplete">
+    </mat-form-field>
+
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let Option of MaterialData.AutoCompleteOptions" [value]="Option.Text">{{Option.Text}}
+      </mat-option>
+    </mat-autocomplete>
+  </div>
+  <div class="CheckBox Component">
+    <mat-checkbox *ngFor="let Option of MaterialData.CheckBoxOptions">{{Option.Text}}</mat-checkbox>
+  </div>
+  <div class="DatePicker Component">
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker" placeholder="DatePicker">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </div>
+  <div class="FormField Component">
+    <mat-form-field>
+      <input matInput placeholder="Form Field & Input">
+    </mat-form-field>
+  </div>
+  <div class="RadioButton Component">
+    <mat-radio-group aria-label="Select an option">
+      <mat-radio-button *ngFor="let Option of MaterialData.RadioButtonOptions" [value]="Option.Text">{{Option.Text}}
+      </mat-radio-button>
+    </mat-radio-group>
+  </div>
+  <div class="Select Component">
+    <mat-form-field>
+      <mat-label>Select</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let Option of MaterialData.SelectOptions" [value]="Option.Text">
+          {{Option.Text}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="Slider">
+    <mat-label>Slider</mat-label>
+    <mat-slider></mat-slider>
+  </div>
+  <div class="SlideToggle">
+        <mat-slide-toggle>Slide Toggle</mat-slide-toggle>
+  </div>
+</div>
